@@ -39,22 +39,22 @@ class LaunchPage(BasePage):
         """changes create dates of the campaign"""
         self.driver.execute_script("window.scrollTo(0, 500)")
         time.sleep(1)
-        self.find_elements(index, *self.DATE_DROPDOWN)
+        self.click_index_element(index, *self.DATE_DROPDOWN)
         time.sleep(1)
-        self.find_elements(weekend, *self.CHOOSING_DATE_BTN)
+        self.click_index_element(weekend, *self.CHOOSING_DATE_BTN)
 
     def changing_end_time(self, index):
         """changes end time of the campaign"""
         self.click_element(*self.TIME_DROPDOWN)
         time.sleep(0.5)
-        self.find_elements(index, *self.CHOOSING_TIME_BTN)
+        self.click_index_element(index, *self.CHOOSING_TIME_BTN)
 
     def changing_display_time(self, index, days):
         """changes display time of the campaign"""
-        self.find_elements(index, *self.DISPLAY_TIME_DROPDOWN_BTN)
+        self.click_index_element(index, *self.DISPLAY_TIME_DROPDOWN_BTN)
         self.driver.execute_script("window.scrollTo(0, 1000)")
         time.sleep(2)
-        self.find_elements(days, *self.DISPLAY_DAYS)
+        self.click_index_element(days, *self.DISPLAY_DAYS)
         time.sleep(0.5)
         self.click_element(*self.ACTIVE_ON_SATURDAY)
         self.click_element(*self.ACTIVE_ON_SUNDAY)
@@ -65,7 +65,7 @@ class LaunchPage(BasePage):
         """changes priority of the campaign"""
         self.driver.execute_script("window.scrollTo(0, 1650)")
         time.sleep(1)
-        self.find_elements(index, *self.ADVANCED_DROPDOWN_BTN)
+        self.click_index_element(index, *self.ADVANCED_DROPDOWN_BTN)
         time.sleep(0.5)
         self.click_element(*self.PRIORITY_DROPDOWN)
         time.sleep(1)

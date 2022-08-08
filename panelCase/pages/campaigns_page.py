@@ -54,7 +54,7 @@ class CampaignsPage(BasePage):
     def clicking_test_menu(self, index):
         """clicks test link menu"""
         time.sleep(2)
-        self.find_elements(index, *self.TEST_MENU_BTN)
+        self.click_index_element(index, *self.TEST_MENU_BTN)
 
     def checking_test_link_visibility(self):
         """checks test link"""
@@ -64,7 +64,7 @@ class CampaignsPage(BasePage):
     def clicking_details_btn(self, index):
         """clicks details button"""
         time.sleep(2)
-        self.find_elements(index, *self.DETAILS_BTN)
+        self.click_index_element(index, *self.DETAILS_BTN)
 
     def checking_priority(self):
         """checks priority of the campaign"""
@@ -78,10 +78,10 @@ class CampaignsPage(BasePage):
 
     def closing_details(self, index):
         """closes details"""
-        self.find_elements(index, *self.CLOSE_BTN)
+        self.click_index_element(index, *self.CLOSE_BTN)
 
     def go_to_test_link(self):
         """goes test link"""
         self.wait_for_element_clickable(self.VARIATION_BTN)
-        self.hover(self.find_elements(0, *self.VARIATION_BTN))
-        self.driver.get(self.find_elements(0, *self.TEST_LINK_URL).get_attribute('href'))
+        self.hover(self.click_index_element(0, *self.VARIATION_BTN))
+        self.driver.get(self.click_index_element(0, *self.TEST_LINK_URL).get_attribute('href'))

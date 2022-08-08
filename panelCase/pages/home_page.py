@@ -14,7 +14,7 @@ class HomePage(BasePage):
 
     def clicking_instory(self, index):
         """goes instory campaigns page"""
-        self.find_elements(index, *self.EXPERIENCE_BTN)
+        self.click_index_element(index, *self.EXPERIENCE_BTN)
         time.sleep(1)
         self.click_element(*self.OPTIMIZE_DROPDOWN)
         time.sleep(1)

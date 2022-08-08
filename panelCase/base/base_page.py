@@ -30,9 +30,9 @@ class BasePage(object):
         """finds and wait element function"""
         return self.driver.find_element(*locator)
 
-    def find_elements(self, index, *element):
+    def click_index_element(self, index, *element):
         """finds and wait elements function"""
-        self.driver.find_elements(*element)[index].click()
+        self.driver.click_index_element(*element)[index].click()
 
     def click_element(self, *locator):
         """performs the click function"""

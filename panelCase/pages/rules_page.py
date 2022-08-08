@@ -15,7 +15,7 @@ class RulesPage(BasePage):
 
     def choosing_page_type(self, index):
         """adds page type rule"""
-        self.find_elements(index, *self.RULE_BTN)
+        self.click_index_element(index, *self.RULE_BTN)
         time.sleep(1)
         self.click_element(*self.CONDITION_LIST)
         time.sleep(1)
